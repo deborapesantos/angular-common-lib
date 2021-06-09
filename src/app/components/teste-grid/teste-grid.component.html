@@ -1,0 +1,11 @@
+{{hello}}
+<ht-grid
+ *ngIf="dataIsLoaded"
+ [htGridOptions]="gridOptions"
+ (onGridLoadId)="getGridId($event)"
+ (objSendEventRowClick)="onClickRow($event)"
+ (objSendEventDoubleRowClick)="onDoubleClickRow($event)"
+ [styleCSS]="estiloCSS">
+ </ht-grid>  
+
+ 

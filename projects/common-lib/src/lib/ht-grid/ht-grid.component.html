@@ -1,0 +1,46 @@
+<div [id]="gridId" class="ht-grid">
+    <div *ngIf="isPagination">
+        <div class="ag-paging-panel">
+            <div id="spinner" *ngIf="loadingMore">
+                <div class="spinner ">
+                  <div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>
+                </div>
+              </div>
+            <span ref="eSummaryPanel" class="ag-paging-row-summary-panel">
+                <span ref="lbFirstRowOnPage">{{takePage}}</span> de <span ref="lbLastRowOnPage">{{qdteTotal}}</span> 
+            </span> 
+            <span class="ag-paging-page-summary-panel">
+                <div (click)=" onBtFirst()" class="ag-paging-button " title="Primeiro"  ><span class="fa fa-angle-double-left" unselectable="on"></span>
+                    <button type="button">Primeiro</button>
+                </div>
+                <div (click)="  onBtPrevious()" class="ag-paging-button " title="Anterior"><span class="fa fa-angle-left" unselectable="on"></span>
+                    <button type="button">Anterior</button>
+                </div>
+                Página <span ref="lbCurrent">{{currentPage}}</span> de <span ref="lbTotal">{{qdtePageTotal}}</span>
+                <div (click)=" onBtNext()" class="ag-paging-button" title="Próximo"><span class="fa fa-angle-right" unselectable="on"></span>
+                    <button type="button">Próximo</button>
+                </div>
+                <div (click)=" onBtLast()" class="ag-paging-button" title="Último"  ><span class="fa fa-angle-double-right" unselectable="on"></span>
+                    <button type="button">Último</button>
+                </div>
+            </span>
+        </div>
+    </div>
+    <!-- [ngClass]="{'ag-disabled': disablePreviusButtomPagination}" -->
+    
+    <ag-grid-angular 
+        [ngStyle]="{ 'height' : (isPagination == true) ? 'calc(100% - 47px)' : 'calc(100% - 15px)' }"
+        style="width: 1000px;"
+        class="ag-theme-balham ht-grid-theme"
+        [rowData]="rowData"
+        [gridOptions]="htGridOptions"
+        (gridReady)="onGridReady($event)"
+        (rowClicked)="onRowClicked($event)" 
+        (rowDoubleClicked)="onDoubleRowClicked($event)"
+        (bodyScroll)="onScroll($event)"
+        [multiSortKey]="multiSortKey"
+        >
+    </ag-grid-angular>
+
+    
+</div>

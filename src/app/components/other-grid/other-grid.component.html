@@ -1,0 +1,13 @@
+<p>other-grid works!</p>
+<div [id]="gridId" class="ht-grid">
+        <ag-grid-angular
+            style="width: 1000px ; height: 500px"
+            class="ag-theme-balham"
+            [rowData]="rowData"
+            [gridOptions]="htGridOptions"
+            (gridReady)="onGridReady($event)"
+            (rowClicked)="onRowClicked($event)" 
+            (rowDoubleClicked)="onDoubleRowClicked($event)"
+            (bodyScroll)="onScroll($event)">
+        </ag-grid-angular>
+        </div>
