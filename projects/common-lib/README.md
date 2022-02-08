@@ -1,6 +1,6 @@
 # Ht CommonLib
 
-Biclioteca criada pela equipe de desenvolvimento Habil Tecnologia LTDA EPP
+Biclioteca criada pela DEBORA PEREIRA DOS SANTOS
 
 ## Data ultima P-atualização  
 24/10/2019 17h20
